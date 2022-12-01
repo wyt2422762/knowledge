@@ -30,6 +30,10 @@
       coverpage: true,
       // 小屏设备下合并导航栏到侧边栏
       mergeNavbar: true,
+      // 最大目录级别，只有n级以上的标题会生成目录
+      maxLevel: 4,
+      // 侧边栏目录级别
+      subMaxLevel: 3,
 
       // 搜索配置
       search: {
@@ -47,6 +51,13 @@
         depth: 4,
         hideOtherSidebarContent: false,
       },
+
+      // 代码块代码复制设置
+      copyCode: {
+        buttonText: '复制到剪贴板',
+        errorText: '复制失败',
+        successText: '复制成功'
+      }
     }
   </script>
 
@@ -60,6 +71,8 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <!-- 搜索功能支持 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- 页签功能支持 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs"></script>
 </body>
 
 </html>
