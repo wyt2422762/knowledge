@@ -402,3 +402,147 @@ Markdown中脚注使用\[\^T\]标记，这个有些显示不支持
 ```
 
 <!-- tabs:end -->
+
+### 3.14 特殊符号
+
+Markdown中的语法符号，前面加反斜线\转义即可以显示符号本身。
+
+<!-- tabs:start -->
+
+#### **显示**
+
+\\
+\*
+\_
+\+
+\.
+
+#### **代码**
+
+```markdown
+\\
+\*
+\_
+\+
+\.
+```
+
+<!-- tabs:end -->
+
+## 4. Markdown高级用法
+
+这部分了解即可
+
+### 4.1 公式
+
+Markdown中可以使用 \$...\$ 和 \$\$...\$\$ 来显示公式，其中\$...\$中的数学表达式将会在行内显示，\$\$...\$\$中的数学表达式将会在块内显示
+
+<!-- tabs:start -->
+
+#### **显示**
+
+$f(x) = sin(x) + 12$是一个数学公式，$E=mc^2$ 是一个物理公式
+
+$$f(x) = sin(x) + 12$$
+
+$$
+\begin{CD}
+   A @>a>> B \\
+@VbVV @AAcA \\
+   C @= D
+\end{CD}
+$$
+
+#### **代码**
+
+```markdown
+$f(x) = sin(x) + 12$是一个数学公式，$E=mc^2$ 是一个物理公式
+
+$$f(x) = sin(x) + 12\$\$
+
+$$
+\begin{CD}
+   A @>a>> B \\
+@VbVV @AAcA \\
+   C @= D
+\end{CD}
+$$
+```
+
+<!-- tabs:end -->
+
+### 4.2 支持的 HTML 元素
+
+Markdown中支持原生的HTML标签
+
+<!-- tabs:start -->
+
+#### **显示**
+
+<table>
+    <tr>
+        <th rowspan="2">值班人员</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+    </tr>
+    <tr>
+        <td>李强</td>
+        <td>张明</td>
+        <td>王平</td>
+    </tr>
+</table>
+
+使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑
+
+<font face="楷体" color=#00ffff size=5>改变文字格式</font>
+
+#### **代码**
+
+```markdown
+<table>
+    <tr>
+        <th rowspan="2">值班人员</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+    </tr>
+    <tr>
+        <td>李强</td>
+        <td>张明</td>
+        <td>王平</td>
+    </tr>
+</table>
+
+使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑
+
+<font face="楷体" color=#00ffff size=5>改变文字格式</font>
+```
+
+<!-- tabs:end -->
+
+### 4.3 选项
+
+可以使用Markdown来制作一个选项，格式为、-[] 表示未完成；-[x]表示已完成
+
+<!-- tabs:start -->
+
+#### **显示**
+
+- [ ] 支持以 PDF 格式导出文稿
+- [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
+- [x] 新增 Todo 列表功能
+- [x] 修复 LaTex 公式渲染问题
+- [x] 新增 LaTex 公式编号功能
+
+#### **代码**
+
+```markdown
+- [ ] 支持以 PDF 格式导出文稿
+- [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
+- [x] 新增 Todo 列表功能
+- [x] 修复 LaTex 公式渲染问题
+- [x] 新增 LaTex 公式编号功能
+```
+
+<!-- tabs:end -->
