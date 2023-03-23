@@ -136,3 +136,40 @@ func main(){
 
 logrus最令人心动的功能就是其可扩展的HOOK机制了，通过在初始化时为logrus添加hook，logrus可以实现各种扩展功能。
 
+Hook接口
+logrus的hook接口定义如下，其原理是每此写入日志时拦截，修改logrus.Entry。
+
+```Go
+// logrus在记录Levels()返回的日志级别的消息时会触发HOOK，
+// 按照Fire方法定义的内容修改logrus.Entry。
+type Hook interface {
+    Levels() []Level
+    Fire(*Entry) error
+}
+```
+
+一个简单自定义hook如下，TestHook定义会在所有级别的日志消息中加入默认字段appName="wyt"。
+
+```GO
+type TestHook struct {
+}
+
+func (hook *TestHook) Levels() []log.Level {
+    return log.AllLevels
+}
+
+func (hook *TestHook) Fire(entry *log.Entry) error {
+    entry.Data["appName"] = "wyt"
+    return nil
+}
+```
+
+hook的使用也很简单，在初始化中调用log.AddHook(hook)添加相应的hook即可。
+
+一些第三方的hook:
+[logrus_amqp](https://github.com/vladoatanasov/logrus_amqp)：Logrus hook for Activemq。
+[logrus-logstash-hook](https://github.com/bshuster-repo/logrus-logstash-hook): Logstash hook for logrus。
+[mgorus](https://github.com/weekface/mgorus): Mongodb Hooks for Logrus。
+[logrus_influxdb](https://github.com/abramovic/logrus_influxdb): InfluxDB Hook for Logrus。
+[logrus-redis-hook](https://github.com/rogierlommers/logrus-redis-hook): Hook for Logrus which enables logging to RELK stack (Redis,Elasticsearch, Logstash and Kibana)。
+
