@@ -1,5 +1,11 @@
 # logrus
 
+- [logrus](#logrus)
+  - [1. logrus简介](#1-logrus简介)
+  - [2. logrus使用](#2-logrus使用)
+    - [2.1 简单使用](#21-简单使用)
+    - [2.2 Hook](#22-hook)
+
 ## 1. logrus简介
 
 logrus是目前Github上star数量最多的日志包，功能强大、性能高效、高度灵活，还提供了自定义插件的功能。很多优秀的开源项目，例如：docker、prometheus等都使用了logrus。logrus除了具有日志的基本功能外，还具有如下特性：
