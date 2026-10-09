@@ -1,9 +1,8 @@
 <!-- docs/_sidebar.md 侧边栏 -->
 
-* [简介](/README.md)
+- [简介](/README.md)
 
 - Markdown
-  
   - [Markdown基础](/markdown/base.md)
 
 - Go
@@ -13,5 +12,3 @@
 - [vpn](/vpn/vpn.md)
 
 - [chatgpt](/chatgpt/chatgpt.md)
-  
-  

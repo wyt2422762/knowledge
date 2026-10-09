@@ -3,9 +3,11 @@
 ## 1. Gin继承swagger
 
 ### 1.1 什么是swagger
+
 Swagger 是一个 API 生成工具，可以生成文档。 Swagger 是通过编写 yaml 和 json 来实现文档化。并且可以进行测试等工作。通过swagger可以方便的生成接口文档，方便前端进行查看和测试。
 
 ### 1.2 安装swagger
+
 安装swagger
 
 ```Go
@@ -66,26 +68,23 @@ func swagRouter(r *gin.Engine) {
 package router
 
 import (
-	"fmt"
-	"net/http"
+    "fmt"
+    "net/http"
 
-	"github.com/gin-gonic/gin"
-	"github.com/wyt/GinStudy/base"
-	"github.com/wyt/GinStudy/middlewares"
+    "github.com/gin-gonic/gin"
+    "github.com/wyt/GinStudy/base"
+    "github.com/wyt/GinStudy/middlewares"
 )
 
 // test-router
 func testRouter(r *gin.Engine) {
-	//最简单的请求路由
-	// r.GET("/test", test)
-
-	testGroup := r.Group("/test", middlewares.WriteLog())
-	{
-		testGroup.GET("/1", test)
-		testGroup.GET("/2/:id", test2)
-	}
-
-
+    //最简单的请求路由
+    // r.GET("/test", test)
+    testGroup := r.Group("/test", middlewares.WriteLog())
+    {
+        testGroup.GET("/1", test)
+        testGroup.GET("/2/:id", test2)
+    }
 }
 
 // 测试 gin-swagger
